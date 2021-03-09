@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Josefin+Sans:wght@300&display=swap");
+
+:root {
+  --light: #9ba17b;
+  --dark: #2e4342;
+  --bright: #819e81;
+  --white: #fff;
+  --purple: #675a69;
+  --blue: #658a91;
+  --main-font: "Josefin Sans";
+  --secondary-font: "Comfortaa";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--secondary-font), "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
 }

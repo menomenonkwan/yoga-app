@@ -1,23 +1,77 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import './App.css';
+import Header from './components/Header';
+import Home from './components/Home';
+import TimeForm from './components/TimeForm';
+import PoseForm from './components/PoseForm';
+import Program from './components/Program';
+import Footer from './components/Footer';
+import Edit from './components/Edit';
+import Totals from './components/Totals';
+import { Move } from './components/assets/Helpers';
+import { poseList as Sample, sampleTime } from './components/assets/Content';
 
 function App() {
+  const [totalTime, setTotalTime] = useState(sampleTime);
+  const [poses, setPoses] = useState([ ...Sample ]);
+  const location = useLocation();
+
+  const deletePose = (index) => {
+    const adjustedPoses = [ ...poses ];
+    adjustedPoses.splice(index, 1);
+    
+    setPoses(adjustedPoses);
+  }
+
+  const movePosition = (index, newIndex) => {
+    const posesCopy = [ ...poses ];
+    const newPoseOrder = Move(posesCopy, index, newIndex);
+
+    setPoses(newPoseOrder);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {totalTime > 0 &&
+      <Totals 
+        totalTime={totalTime} 
+        poses={poses}
+        setPoses={setPoses}
+      />}
+      <Switch location={location} key={location.key}>
+        <Route path="/time">
+          <TimeForm 
+            totalTime={totalTime} 
+            setTotalTime={setTotalTime}
+          />
+        </Route>
+        <Route path="/pose">
+          <PoseForm 
+            poses={poses} 
+            setPoses={setPoses}
+          />
+        </Route>
+        <Route path="/edit">
+          <Edit 
+            poses={poses} 
+            setPoses={setPoses}
+            movePosition={movePosition} 
+            deletePose={deletePose}
+          />
+        </Route>
+        <Route path="/program">
+          <Program 
+            poses={poses}
+            totalTime={totalTime}
+          />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+      <Footer />
     </div>
   );
 }
