@@ -4,7 +4,7 @@ import CreatableSelect from 'react-select/creatable';
 const customStyles = {
   container: styles => ({
     ...styles,
-    width: '100%',
+    width: '500px',
     outline: 'transparent',
   }),
   control: styles => ({ 
@@ -15,18 +15,20 @@ const customStyles = {
   option: styles => ({ 
     ...styles,                 
     borderBottom: '1px solid var(--purple)',
+    padding: '1rem', 
   }),
   menu: styles => ({ 
     ...styles,                 
-    backgroundColor: 'var(--blue)',
+    backgroundColor: 'var(--lightpurple)',
     color: 'var(--dark)',
     fontSize: '1.5rem',
     padding: '1rem',   
   }),             
   multiValue: styles => ({
     ...styles,            
-    backgroundColor: 'var(--blue)',
+    backgroundColor: 'var(--lightpurple)',
     fontSize: '2rem',
+    padding: '0.5rem'
   }),    
   menuList: styles => ({
     ...styles,            

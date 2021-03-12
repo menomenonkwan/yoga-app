@@ -3,7 +3,6 @@ import React from 'react';
 const Move = (arr, from, to) => {
   let newLocation = from + to;
 
-  // added to prevent first from becoming last
   if(newLocation < 0) { newLocation = 0;}
 
   const item = arr.splice(from, 1);
@@ -35,24 +34,6 @@ const getSeconds = (duration) => {
   const seconds = duration % 60;
   return seconds;
 }
-
-// const AddToTime = (time) => {
-//   const noTime = { duration: 0}
-//   const reducedTime = time.reduce((a, b) => ({duration: a.duration + b.duration}), noTime);
-  
-//   const totalTime = reducedTime.duration;
-//   const hrs = Math.floor(totalTime / 3600);
-//   const min = Math.floor(totalTime / 60) % 60;
-//   const sec = totalTime % 60;
-//   const newTime = {
-//     duration: totalTime,
-//     hours: hrs,
-//     minutes: min,
-//     seconds: sec,
-//   };
-
-//   return newTime;
-// }
 
 const displayTime = (duration) => {
   let number = duration;

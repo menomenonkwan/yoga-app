@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
@@ -15,7 +14,7 @@ const containerVariants = {
     }
   },
   exit: {
-    opacity: 0, y: '20vh',
+    opacity: 0, y: '25vh',
     transition: {
       duration: 0.2
     }
@@ -27,31 +26,30 @@ const childVariants = {
   show: { opacity: 1 }
 }
 
-const Welcome = () => {
+const NotFound = () => {
   return ( 
     <div className="container">
-      <motion.div
+      <motion.div 
         className="wrapper"
         variants={containerVariants}
         initial="hidden"
         animate="show"
         exit="exit"
-      > 
-        <motion.h1 variants={childVariants}>Welcome, Buddy!</motion.h1>
-        <motion.h2 variants={childVariants}>Let's Get Started...</motion.h2>
-        <Link to="/time">
-          <motion.button
-            className="on"
-            variants={childVariants}
-            whileHover={{scale:1.1}}
-            whileTap={{scale:0.9}}
-          >
-            Build Program
-          </motion.button>
-        </Link>
+      >    
+        <motion.h1 variants={childVariants}>Oh no!</motion.h1> 
+        <h2>
+          <motion.span variants={childVariants}>Page </motion.span> 
+          <motion.span variants={childVariants}>Not </motion.span> 
+          <motion.span variants={childVariants}>Found </motion.span>
+          <motion.span variants={childVariants}>. </motion.span>
+          <motion.span variants={childVariants}>. </motion.span>
+          <motion.span variants={childVariants}>.</motion.span>
+        </h2>
+        
+
       </motion.div>
     </div>
    );
 }
  
-export default Welcome;
+export default NotFound;

@@ -8,9 +8,18 @@ import PoseForm from './components/PoseForm';
 import Program from './components/Program';
 import Footer from './components/Footer';
 import Edit from './components/Edit';
-import Totals from './components/Totals';
+import NotFound from './components/NotFound';
+// import Totals from './components/assets/Totals';
 import { Move } from './components/assets/Helpers';
 import { poseList as Sample, sampleTime } from './components/assets/Content';
+import { AnimatePresence, motion } from 'framer-motion';
+
+const variants = {
+  hidden: { opacity: 0,},
+  visible: { opacity: 1,
+    transition: { duration: 0.5 }
+  }
+}
 
 function App() {
   const [totalTime, setTotalTime] = useState(sampleTime);
@@ -32,26 +41,32 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <motion.div className="App"
+      variants={variants}
+      initial="hidden"
+      animate="visible"     
+    >
       <Header />
-      {totalTime > 0 &&
+      {/* {totalTime > 0 &&
       <Totals 
         totalTime={totalTime} 
         poses={poses}
         setPoses={setPoses}
-      />}
+      />} */}
+      <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.key}>
         <Route path="/time">
           <TimeForm 
             totalTime={totalTime} 
             setTotalTime={setTotalTime}
-          />
+            />
         </Route>
         <Route path="/pose">
           <PoseForm 
             poses={poses} 
             setPoses={setPoses}
-          />
+            totalTime={totalTime}
+            />
         </Route>
         <Route path="/edit">
           <Edit 
@@ -59,6 +74,7 @@ function App() {
             setPoses={setPoses}
             movePosition={movePosition} 
             deletePose={deletePose}
+            totalTime={totalTime}
           />
         </Route>
         <Route path="/program">
@@ -70,9 +86,11 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route component={NotFound} />
       </Switch>
+      </AnimatePresence>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 

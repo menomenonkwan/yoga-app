@@ -1,19 +1,32 @@
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { displayTime } from './Helpers';
+// import { useState } from 'react';
 
 const CircleTimer = ({ timerOn, completePose, currentPose }) => {
-
+  // const [next, setNext] = useState(null);
+// const handleClick = () => {
+// const handleClick = (remainingTime) => {
+//   console.log(remainingTime);
+  // console.log('clicky');
+//   remainingTime = remainingTime - 3;
+//   return remainingTime;
+//   setNext(1);
+// }
+// console.log(next);
   return (
     <CountdownCircleTimer 
       isPlaying={timerOn}
       duration={currentPose.duration}
       colors={[
-          ['#004777', 0.33],
-          ['#F7B801', 0.33],
-          ['#A30000', 0.33],
+          ['#282b66', 0.33],
+          ['#cab665', 0.33],
+          ['#825142', 0.33]
         ]}
-      size={300}
+      trailColor='#a3b4aa'
+      size={350}
+      strokeWidth={20}
       onComplete={completePose}
+      // initialRemainingTime={next}
     >
     {({ remainingTime }) => (
       <div 

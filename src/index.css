@@ -4,9 +4,13 @@
   --light: #9ba17b;
   --dark: #2e4342;
   --bright: #819e81;
-  --white: #fff;
+  --white: #eee;
   --purple: #675a69;
-  --blue: #658a91;
+  --lightpurple: #a7867d;
+  --blue: #282b66;
+  --lightblue: #a3b4aa;
+  --yellow: #cab665;
+  --orange: #825142;
   --main-font: "Josefin Sans";
   --secondary-font: "Comfortaa";
 }
@@ -20,6 +24,8 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  background: var(--light);
+  background: radial-gradient(circle, var(--light) 0%, var(--dark) 100%);
 }
 
 body {

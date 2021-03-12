@@ -9,16 +9,15 @@ const TimeSelect = ({arr, handleChange, currentValue = 0}) => {
     <WheelPicker
       data={arr}
       onChange={handleOnChange}
-      onFoucs={() => console.log('hsfda')}
       height={150}
       width={100}
       titleText="Enter value same as aria-label"
       itemHeight={30}
       selectedID={arr[currentValue].id}
       fontSize="1.75rem"
-      color="#ccc"
-      activeColor="var(--dark)"
-      backgroundColor="var(--blue)"
+      color="var(--purple)"
+      activeColor="var(--white)"
+      backgroundColor="var(--lightpurple)"
       focusColor="transparent"
     />
   );

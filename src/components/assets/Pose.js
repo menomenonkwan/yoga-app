@@ -1,6 +1,15 @@
-import { displayTime } from './assets/Helpers';
+import { displayTime } from './Helpers';
 import { FaChevronCircleUp, FaChevronCircleDown, FaEdit, FaDizzy, FaArrowsAltV } from 'react-icons/fa';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const childVariants = {
+  hidden: { opacity: 0, scale: 0.1 },
+  show: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.1, 
+    transition: { duration: 0.4 }
+  }
+}
 
 const Pose = ({ pose, index, movePosition, editPose, deletePose }) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -16,7 +25,14 @@ const Pose = ({ pose, index, movePosition, editPose, deletePose }) => {
   }
 
   return ( 
-    <li className={isDragging ? "pose drag" : "pose"} onDrag={handleDrag} onDragEnd={handleDrop}>
+    <motion.li className={isDragging ? "pose drag" : "pose"} onDrag={handleDrag} onDragEnd={handleDrop}
+      whileHover={{ scale:1.1 }}
+      variants={childVariants}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      custom={index}
+    >
       <FaChevronCircleDown className="pose-controls" onClick={() => movePosition(index, 1)}/>
       <FaChevronCircleUp className="pose-controls"  onClick={() =>movePosition(index, -1)}/>
       <p className="pose-name">
@@ -27,7 +43,7 @@ const Pose = ({ pose, index, movePosition, editPose, deletePose }) => {
       <FaArrowsAltV className="pose-drag"/>
       <FaEdit className="pose-controls"  onClick={() => editPose(index)}/>
       <FaDizzy className="pose-controls"  onClick={() => deletePose(index)}/>
-    </li>
+    </motion.li>
    );
 }
  

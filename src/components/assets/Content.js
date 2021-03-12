@@ -2,12 +2,12 @@ const poseList = [
   {id: 1, name: 'one', duration: 1},
   {id: 2, name: 'two', duration: 2},
   {id: 3, name: 'three', duration: 1},
-  // {id: 4, name: 'four', duration: 5},
-  // {id: 5, name: 'five', duration: 1},
-  // {id: 6, name: 'six', duration: 4},
-  // {id: 7, name: 'seven', duration: 3},
-  // {id: 8, name: 'eight', duration: 4},
-  // {id: 9, name: 'nine', duration: 2},
+  {id: 4, name: 'four', duration: 5},
+  {id: 5, name: 'five', duration: 1},
+  {id: 6, name: 'six', duration: 4},
+  {id: 7, name: 'seven', duration: 3},
+  {id: 8, name: 'eight', duration: 4},
+  {id: 9, name: 'nine', duration: 2},
 ];
 
 const countdown = [

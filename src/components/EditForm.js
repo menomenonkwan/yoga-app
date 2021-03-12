@@ -2,6 +2,23 @@ import React, { useState } from 'react';
 import { getHours, getMinutes, getSeconds, getTotalSeconds } from './assets/Helpers';
 import TimeSelect from './assets/TimeSelect';
 import { hoursArr, minsArr } from './assets/Content';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: { opacity: 0, scale: 0.1 },
+  show: {
+    opacity: 1, scale: 1,
+    transition: {
+      duration: 0.4,
+    }
+  },
+  exit: { opacity: 0, 
+    scale: 0.1 ,
+    transition: {
+      duration: 0.2
+    }
+  }
+}
 
 const EditForm = ({ index, poses, setPoses, setEdit }) => {
   const pose = poses[index];
@@ -58,10 +75,16 @@ const EditForm = ({ index, poses, setPoses, setEdit }) => {
   }
 
   return ( 
-    <div className="edit">
+    <motion.div 
+      className="edit"
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
+      <p className="legend">Edit Pose:</p>
       <form onSubmit={handleSubmit} >
         <fieldset>
-          <legend>Add A Pose:</legend>
           <input 
             type="text" 
             name="name"
@@ -95,40 +118,17 @@ const EditForm = ({ index, poses, setPoses, setEdit }) => {
               />
             </div>
           </div>
-          {/* <label>Hours</label>
-          <input 
-            type="number" 
-            name="hours"
-            placeholder="hours (0 - 24)"
-            min="0" 
-            max="24" 
-            value={hours}
-            onChange={handleChange}
-          />
-          <label>Minutes</label>
-          <input 
-            type="number" 
-            name="minutes"
-            placeholder="minutes (0 - 59)" 
-            min="0" 
-            max="59" 
-            value={minutes}
-            onChange={handleChange}
-          />  
-          <label>Seconds</label>      
-          <input 
-            type="number" 
-            name="seconds"
-            placeholder="seconds (0 - 59)" 
-            min="0" 
-            max="59" 
-            value={seconds}
-            onChange={handleChange}
-          />      */}
-          <button type="submit">Set Pose</button>       
+          <motion.button 
+            type="submit"
+            className="on"
+            whileHover={{scale:1.1}}
+            whileTap={{scale:0.9}}
+          >
+            Set Pose
+          </motion.button>       
         </fieldset>
       </form>
-    </div>
+    </motion.div>
   );
 }
  

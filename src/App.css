@@ -29,7 +29,7 @@ header h1 {
   flex: 1;
   text-align: start;
   font-family: var(--main-font), var(--secondary-font), sans-serif;
-  color: var(--blue);
+  color: var(--lightblue);
   text-shadow: 1px 2px 3px black;
 }
 
@@ -45,7 +45,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   padding: 1rem 2rem;
   color: var(--white);
   position: relative;
@@ -75,8 +75,11 @@ nav a:hover::after {
 }
 
 .selected {
-  color: var(--blue);
+  color: var(--purple);
+  text-shadow: 1px 1px 1px black;
+  font-weight: 400;
   position: relative;
+  filter: brightness(0.9);
 }
 
 .selected::after {
@@ -101,17 +104,21 @@ nav a:hover::after {
   align-items: center;
 }
 
+.wrapper {
+  overflow-y: hidden;
+}
+
 button {
   padding: 1rem 2rem;
   border-radius: 2rem;
-  border: 1px solid var(--dark);
-  color: var(--dark);
+  border: 1px solid var(--purple);
+  color: var(--lightblue);
   outline: transparent;
   font-family: inherit;
-  background: var(--blue);
+  background: var(--purple);
   font-size: 1.5rem;
-  transition: all 0.3s ease;
   margin: 1rem;
+  transform: scale(1);
 }
 
 button svg {
@@ -120,19 +127,37 @@ button svg {
   vertical-align: sub;
 }
 
-button:hover {
+.on:hover {
   cursor: pointer;
-  background: var(--blue);
+  color: var(--blue);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+.off {
+  color: var(--purple);
+  background: none;
+}
+
+.on:hover {
+  cursor: pointer;
+  color: var(--blue);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.off:hover {
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
   font-size: 2rem;
   padding: 2rem;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 p {
@@ -142,32 +167,51 @@ p {
 /* ---------------------------------- */
 /* EDIT LIST */
 /* ---------------------------------- */
+.program-edit {
+  position: absolute;
+  left: 0;
+  top: 5rem;
+}
+
 .list {
   list-style-type: none;
-  min-width: 500px;
+  /* width: 100%; */
+  min-width: 700px;
   padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pose {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  width: 80%;
+  background: var(--purple);
+  background: linear-gradient(235deg, var(--purple), var(--lightpurple));
   text-align: left;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 1rem 0;
+  border-radius: 1rem 1rem 0 0;
   color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
   outline: transparent;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--dark);
+  margin-top: 1rem;
+}
+
+.pose:nth-of-type(even) {
+  border-radius: 0 0 1rem 1rem;
+  filter: brightness(0.85);
 }
 
 .pose-name {
   flex: 1;
   text-align: center;
   font-size: 1.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
 .pose-time {
@@ -186,13 +230,13 @@ p {
 
 .pose-controls:hover {
   cursor: pointer;
-  color: var(--blue);
+  color: var(--dark);
   transform: scale(1.5);
 }
 
 .pose-drag:hover {
   cursor: move;
-  color: var(--blue);
+  color: var(--dark);
   transform: scale(1.5);
 }
 
@@ -219,10 +263,12 @@ fieldset {
   border: none;
 }
 
-legend {
-  font-size: 2rem;
+.legend {
+  font-size: 2.5rem;
   color: var(--dark);
-  text-shadow: 1px 2px 3px var(--purple);
+  text-align: left;
+  padding: 2rem;
+  text-shadow: 1px 1px 3px var(--purple);
 }
 
 label {
@@ -256,14 +302,13 @@ input:focus {
 
 .time-selection ul {
   border-radius: 1rem;
-  /* box-shadow: 2px 2px 12px black; */
   overflow-y: scroll;
   scrollbar-color: var(--purple) rgba(0, 0, 0, 0.1);
   scrollbar-width: thin;
 }
 
 .time-selection span {
-  color: var(--dark);
+  color: var(--purple);
 }
 
 .time-selection-individual {
@@ -272,6 +317,9 @@ input:focus {
   justify-content: center;
   align-items: center;
   margin: 0 2rem;
+}
+.time-selection-individual ul {
+  box-shadow: inset 1px 3px 10px #222;
 }
 
 /* --------------------------------------- */
@@ -329,20 +377,17 @@ input:focus {
   justify-content: center;
   align-items: center;
   position: absolute;
+  top: 0;
 }
 
 .circle {
-  /* background: var(--light); */
   padding: 2rem;
-  /* position: absolute; */
-  /* bottom: 0; */
-  /* left: 0; */
 }
 
 .next {
   position: absolute;
   left: 2rem;
-  bottom: 8rem;
+  bottom: 2rem;
   text-align: left;
 }
 
@@ -351,7 +396,7 @@ input:focus {
 }
 
 .next p {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .to-home {
@@ -377,7 +422,7 @@ PROGRESS BAR
 
 #program-progress {
   height: 4rem;
-  /* transition: all 0.2s ease; */
+  transition: all 1s ease;
 }
 
 #program-progress p {
