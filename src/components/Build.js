@@ -1,4 +1,3 @@
-import NewTimeForm from './NewTimeForm';
 import NewPoseForm from './NewPoseForm';
 import Edit from './Edit';
 import { motion } from 'framer-motion';
