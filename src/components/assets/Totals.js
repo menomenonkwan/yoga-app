@@ -1,40 +1,24 @@
 import { displayTime, getTotalTime } from './Helpers';
-import { motion } from 'framer-motion';
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    }
-  }
-}
 
 const Totals = ({ totalTime, poses }) => {
   const remainingTime = totalTime - getTotalTime(poses);
 
   return ( 
-    <motion.div 
-      className="totals"
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-    >
-      <h2>Program Time: 
-        <span>
-          {displayTime(totalTime)}
-        </span>
-      </h2>
-
-      <h2>Time Remaining: 
-        <span className={remainingTime < 0 ? 'overtime' : ''}>
-          {displayTime(remainingTime)}
-        </span>
-      </h2>
-    </motion.div>
-   );
+    <div className="totals">
+      <div className="totals-display">
+        <h3>Total Time: 
+          <span>
+            {displayTime(getTotalTime(poses))}
+          </span>
+        </h3>
+        <h3>Time Remaining: 
+          <span className={remainingTime < 0 ? 'overtime' : ''}>
+            {displayTime(remainingTime)}
+          </span>
+        </h3>
+      </div>
+    </div>
+  );
 }
  
 export default Totals;

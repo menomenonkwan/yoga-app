@@ -4,7 +4,7 @@
   --light: #9ba17b;
   --dark: #2e4342;
   --bright: #819e81;
-  --white: #eee;
+  --white: #ccc;
   --purple: #675a69;
   --lightpurple: #a7867d;
   --blue: #282b66;
@@ -23,12 +23,12 @@
 
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
   background: var(--light);
   background: radial-gradient(circle, var(--light) 0%, var(--dark) 100%);
 }
 
 body {
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--secondary-font), "Cantarell", "Fira Sans", "Droid Sans",

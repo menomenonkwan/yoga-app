@@ -28,7 +28,7 @@ const childVariants = {
 
 const NotFound = () => {
   return ( 
-    <div className="container">
+    <div className="container" style={{ alignItems: 'center' }}>
       <motion.div 
         className="wrapper"
         variants={containerVariants}

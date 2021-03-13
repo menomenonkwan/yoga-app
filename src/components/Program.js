@@ -132,7 +132,7 @@ const Program = ({ poses, totalTime }) => {
             </div>
           : null
         }
-        <Link to="/edit" className="to-home">
+        <Link to="/build" className="to-home">
           <motion.button
             className="on"
             whileHover={{scale:1.1}}

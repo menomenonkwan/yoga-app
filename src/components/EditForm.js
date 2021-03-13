@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getHours, getMinutes, getSeconds, getTotalSeconds } from './assets/Helpers';
-import TimeSelect from './assets/TimeSelect';
+import Selection from './assets/Selection';
 import { hoursArr, minsArr } from './assets/Content';
 import { motion } from 'framer-motion';
 
@@ -28,6 +28,7 @@ const EditForm = ({ index, poses, setPoses, setEdit }) => {
   const [hours, setHours] = useState(getHours(pose.duration));
   const [minutes, setMinutes] = useState(getMinutes(pose.duration));
   const [seconds, setSeconds] = useState(getSeconds(pose.duration));
+  const [disabled, setDisabled] = useState(false);
 
   const editPose = (name, updatedInput) => {
     if(name === 'name') {
@@ -55,16 +56,34 @@ const EditForm = ({ index, poses, setPoses, setEdit }) => {
     setPoses(newPoses);
   }
 
-  const handleChange = (e) => {
-    const name = e.currentTarget.name;
-    const updatedInput = e.currentTarget.value;
+  useEffect(() => {
+    const totalSeconds = getTotalSeconds(hours, minutes, seconds);
 
-    editPose(name, updatedInput);
+    (totalSeconds > 0 ? setDisabled(false) : setDisabled(true));
+  }, [hours, minutes, seconds]);
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    console.log(event.target.name);
+    if(name === 'name') {
+      setTitle(value);
+    }
+    if(name === 'hours') {
+      setHours(value);
+    }
+    if(name === 'minutes') {
+      setMinutes(value);
+    }
+    if(name === 'seconds') {
+      setSeconds(value);
+    }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-        const name = e.currentTarget.name;
+    const name = e.currentTarget.name;
     const updatedInput = e.currentTarget.value;
     const totalSeconds = hours + minutes + seconds;
 
@@ -82,9 +101,9 @@ const EditForm = ({ index, poses, setPoses, setEdit }) => {
       animate="show"
       exit="exit"
     >
-      <p className="legend">Edit Pose:</p>
       <form onSubmit={handleSubmit} >
         <fieldset>
+          <legend>Edit Pose:</legend>
           <input 
             type="text" 
             name="name"
@@ -92,35 +111,33 @@ const EditForm = ({ index, poses, setPoses, setEdit }) => {
             value={title}
             onChange={handleChange}
           />
-                    <div className="time-selection">
-            <div className="time-selection-individual">
-              <label>hours</label>
-              <TimeSelect 
-                arr={hoursArr} 
-                handleChange={setHours}
-                currentValue={hours}
-              />
-            </div>
-            <div className="time-selection-individual">
-              <label>minutes</label>
-              <TimeSelect 
-                arr={minsArr} 
-                handleChange={setMinutes}
-                currentValue={minutes}
-              />
-            </div>
-            <div className="time-selection-individual">
-              <label>seconds</label>
-              <TimeSelect 
-                arr={minsArr} 
-                handleChange={setSeconds}
-                currentValue={seconds}
-              />
-            </div>
+          <div 
+            style={{
+              padding: '2rem',
+            }}
+          >
+            <Selection 
+              name='hours'
+              time={hours}
+              handleChange={handleChange} 
+              range={hoursArr}             
+            />
+            <Selection 
+              name='minutes'
+              time={minutes}
+              handleChange={handleChange}      
+              range={minsArr}        
+            />
+            <Selection 
+              name='seconds'
+              time={seconds}
+              handleChange={handleChange}              
+              range={minsArr}
+            />
           </div>
           <motion.button 
             type="submit"
-            className="on"
+            className={disabled ? "off" : "on"}
             whileHover={{scale:1.1}}
             whileTap={{scale:0.9}}
           >

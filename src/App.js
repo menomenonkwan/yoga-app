@@ -3,16 +3,13 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
-import TimeForm from './components/TimeForm';
-import PoseForm from './components/PoseForm';
 import Program from './components/Program';
 import Footer from './components/Footer';
-import Edit from './components/Edit';
 import NotFound from './components/NotFound';
-// import Totals from './components/assets/Totals';
 import { Move } from './components/assets/Helpers';
-import { poseList as Sample, sampleTime } from './components/assets/Content';
+// import { poseList as Sample, sampleTime } from './components/assets/Content';
 import { AnimatePresence, motion } from 'framer-motion';
+import Build from './components/Build';
 
 const variants = {
   hidden: { opacity: 0,},
@@ -22,8 +19,8 @@ const variants = {
 }
 
 function App() {
-  const [totalTime, setTotalTime] = useState(sampleTime);
-  const [poses, setPoses] = useState([ ...Sample ]);
+  const [totalTime, setTotalTime] = useState(0);
+  const [poses, setPoses] = useState([]);
   const location = useLocation();
 
   const deletePose = (index) => {
@@ -47,40 +44,22 @@ function App() {
       animate="visible"     
     >
       <Header />
-      {/* {totalTime > 0 &&
-      <Totals 
-        totalTime={totalTime} 
-        poses={poses}
-        setPoses={setPoses}
-      />} */}
       <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.key}>
-        <Route path="/time">
-          <TimeForm 
-            totalTime={totalTime} 
-            setTotalTime={setTotalTime}
-            />
-        </Route>
-        <Route path="/pose">
-          <PoseForm 
-            poses={poses} 
-            setPoses={setPoses}
-            totalTime={totalTime}
-            />
-        </Route>
-        <Route path="/edit">
-          <Edit 
-            poses={poses} 
-            setPoses={setPoses}
-            movePosition={movePosition} 
-            deletePose={deletePose}
-            totalTime={totalTime}
-          />
-        </Route>
         <Route path="/program">
           <Program 
             poses={poses}
             totalTime={totalTime}
+          />
+        </Route>
+        <Route path="/build">
+          <Build 
+            poses={poses}
+            setPoses={setPoses}
+            totalTime={totalTime}
+            setTotalTime={setTotalTime}
+            movePosition={movePosition} 
+            deletePose={deletePose}
           />
         </Route>
         <Route exact path="/">

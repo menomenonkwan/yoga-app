@@ -2,9 +2,11 @@ import { poseNames } from './Content';
 import CreatableSelect from 'react-select/creatable';
 
 const customStyles = {
+
   container: styles => ({
     ...styles,
-    width: '500px',
+    width: '350px',
+    margin: '3rem 0 1.5rem 0',
     outline: 'transparent',
   }),
   control: styles => ({ 
@@ -19,7 +21,7 @@ const customStyles = {
   }),
   menu: styles => ({ 
     ...styles,                 
-    backgroundColor: 'var(--lightpurple)',
+    backgroundColor: 'var(--purple)',
     color: 'var(--dark)',
     fontSize: '1.5rem',
     padding: '1rem',   
@@ -27,12 +29,12 @@ const customStyles = {
   multiValue: styles => ({
     ...styles,            
     backgroundColor: 'var(--lightpurple)',
-    fontSize: '2rem',
+    fontSize: '1.5rem',
     padding: '0.5rem'
   }),    
   menuList: styles => ({
     ...styles,            
-    backgroundColor: 'rgba(0,0,0,0.1)',
+    backgroundColor: 'var(--lightpurple)',
   }),                   
   placeholder: styles => ({
     ...styles,            
@@ -40,7 +42,7 @@ const customStyles = {
   }),                   
 };
 
-const PoseSelectionTwo = ({ setNames }) => {
+const PoseSelectionTwo = ({ names, setNames }) => {
 
   return (
     <CreatableSelect
@@ -49,6 +51,7 @@ const PoseSelectionTwo = ({ setNames }) => {
       options={poseNames}
       styles={customStyles}
       placeholder="Select or Add name..."
+      value={names}
     /> 
   );
 }

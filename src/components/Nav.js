@@ -5,16 +5,7 @@ const Nav = () => {
     <nav>
       <ul>
         <li>
-          <Link exact to="/" activeClassName="selected">Home</Link>
-          </li>
-        <li>
-          <Link to="/time" activeClassName="selected">Time</Link>
-        </li>
-        <li>
-          <Link to="/pose" activeClassName="selected">Add Pose</Link>
-          </li>
-        <li>
-          <Link to="/edit" activeClassName="selected">Edit</Link>
+          <Link exact to="/build" activeClassName="selected">Build</Link>
         </li>
         <li>
           <Link to="/program" activeClassName="selected">Program</Link>

@@ -10,8 +10,9 @@ const containerVariants = {
       damping: 10, 
       mass: 0.5, 
       stiffness: 120,
-      staggerChildren: 0.6,
+      staggerChildren: 1,
       duration: 0.4,
+      delay: 0.5
     }
   },
   exit: {
@@ -24,12 +25,13 @@ const containerVariants = {
 
 const childVariants = {
   hidden: { opacity: 0 },
-  show: { opacity: 1 }
+  show: { opacity: 1 },
 }
 
 const Welcome = () => {
   return ( 
-    <div className="container">
+    <div className="container" style={{ alignItems: 'center' }}>
+
       <motion.div
         className="wrapper"
         variants={containerVariants}
@@ -39,7 +41,7 @@ const Welcome = () => {
       > 
         <motion.h1 variants={childVariants}>Welcome, Buddy!</motion.h1>
         <motion.h2 variants={childVariants}>Let's Get Started...</motion.h2>
-        <Link to="/time">
+        <Link to="/build">
           <motion.button
             className="on"
             variants={childVariants}
