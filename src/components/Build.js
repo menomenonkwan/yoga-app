@@ -1,7 +1,7 @@
-import NewPoseForm from './NewPoseForm';
 import Edit from './Edit';
 import { motion } from 'framer-motion';
 import SlideTimeForm from './SlideTimeForm';
+import SlidePoseForm from './SlidePoseForm';
 
 const formVariants = {
   hidden: { opacity: 0, x: '-100vw' },
@@ -25,7 +25,7 @@ const listVariants = {
   }  
 }
 
-const Build = ({ poses, setPoses, totalTime, setTotalTime, movePosition, deletePose }) => {
+const Build = ({ poses, setPoses, totalTime, setTotalTime, movePosition, deletePose, currentUser }) => {
 
   return ( 
     <div className="container">
@@ -41,12 +41,7 @@ const Build = ({ poses, setPoses, totalTime, setTotalTime, movePosition, deleteP
           setTotalTime={setTotalTime}
           poses={poses}        
         />
-        {/* <NewTimeForm 
-          totalTime={totalTime} 
-          setTotalTime={setTotalTime}
-          poses={poses}
-        /> */}
-        <NewPoseForm 
+        <SlidePoseForm 
           poses={poses} 
           setPoses={setPoses}
         />
@@ -64,6 +59,7 @@ const Build = ({ poses, setPoses, totalTime, setTotalTime, movePosition, deleteP
           movePosition={movePosition} 
           deletePose={deletePose}
           totalTime={totalTime}
+          currentUser={currentUser}
         />       
       </motion.div>     
     </div>

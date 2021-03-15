@@ -17,7 +17,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem 2.5rem;
   font-size: 1.6rem;
 }
 
@@ -118,8 +118,9 @@ nav a:hover::after {
 button {
   padding: 1rem 2rem;
   border-radius: 2rem;
-  border: 1px solid var(--lightpurple);
-  color: var(--lightblue);
+  border: none;
+  /* border: 1px solid var(--lightpurple); */
+  color: var(--bright);
   outline: transparent;
   font-family: inherit;
   background: var(--purple);
@@ -136,7 +137,6 @@ button svg {
 
 .on:hover {
   cursor: pointer;
-  color: var(--blue);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -144,12 +144,6 @@ button svg {
   color: var(--dark);
   border: 1px solid var(--dark);
   background: none;
-}
-
-.on:hover {
-  cursor: pointer;
-  color: var(--blue);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .off:hover {
@@ -219,20 +213,20 @@ legend span {
   border-bottom: 2px solid var(--lightpurple);
 }
 
-input {
+.edit-input {
   font-family: inherit;
-  font-size: 2rem;
+  font-size: 1.75rem;
   padding: 1rem;
-  border-radius: 2rem;
+  border-radius: 3rem;
   border: 2px solid transparent;
   margin: 1rem 2rem;
   max-width: 80%;
   outline: transparent;
 }
 
-input:focus {
+.edit-input:focus {
   box-shadow: 1px 2px 3px var(--dark);
-  border: 2px solid var(--blue);
+  border: 2px solid var(--purple);
 }
 
 /* ---------------------------------- */
@@ -423,9 +417,10 @@ input:focus {
 
 .to-home {
   position: absolute;
-  top: 4rem;
-  left: 1rem;
+  bottom: 1rem;
+  right: 1rem;
 }
+
 .program-controls {
   position: absolute;
   bottom: 1rem;
@@ -462,4 +457,173 @@ PROGRESS BAR
 .progress-right {
   position: absolute;
   right: 2rem;
+}
+
+
+/* --------------------------------
+SAVED LIST
+-------------------------------- */
+.saved-programs-grid {
+  background: rgb(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
+}
+.saved-list {
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.15);
+  margin: 1rem;
+}
+.saved-pose-list {
+  margin-top: 0.5rem;
+  box-shadow: 1px 2px 5px black;
+} 
+.saved-pose {
+  background: var(--purple);
+  padding: 0.5rem;
+}
+.saved-pose:nth-child(even) {
+  filter: brightness(0.9);
+}
+
+.mobile { display: none;}
+
+
+/* --------------------------------
+MEDIA QUERIES
+-------------------------------- */
+
+@media (max-width: 1300px) {
+  .next {
+    bottom: 10rem;
+  }
+  
+  .to-home {
+    top: 4rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  legend {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+
+  legend span {
+    font-size: 2rem;
+  }
+  .totals {
+    width: 90%;
+  }
+  
+  .totals h3 {
+    font-size: 1.5rem;
+    padding: 0.25rem;
+  }
+  .totals span {
+    font-size: 2rem;
+  }
+  
+  .totals-display {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 750px) {
+  nav { display: none; }
+  .mobile { 
+    display: block; 
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .mobile svg {
+    font-size: 3rem;
+    color: var(--purple);
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .account h1 {
+    font-size: 2rem;
+  }
+
+  .account h2 {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  }
+
+  .account h3 {
+    font-size: 2rem;
+  }
+
+  .program-controls button,
+  .to-home button,
+  .circle button {
+    margin: 0.5rem 1rem;
+    padding: 1rem 1rem;
+    font-size: 0;
+  }
+
+  .program-controls button svg,
+  .to-home button svg,
+  .circle button svg {
+    margin: auto;
+  }
+
+  .next h2 { font-size: 1.5rem; }
+  .next p { font-size: 2rem; }
+
+  .saved-programs-grid {
+    background: rgb(0,0,0,0.1);
+    padding: 1rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
+  }
+  .saved-list {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.15);
+    margin: 1rem;
+  }
+  .saved-pose-list {
+    margin-top: 0.5rem;
+    box-shadow: 1px 2px 5px black;
+  } 
+  .saved-pose {
+    background: var(--purple);
+    padding: 1rem 0;
+  }
+
+  .current-list {
+    margin: 3rem 0;
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  .edit fieldset {
+    background: transparent;
+  }
+
+  .inputs {
+    width: 90%;
+  }
+
+
 }

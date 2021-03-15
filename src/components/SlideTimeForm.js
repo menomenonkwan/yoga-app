@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getTotalSeconds, getHours, getMinutes, getSeconds, displayTime } from './assets/Helpers';
-// import { hoursArr, minsArr } from './assets/Content';
+import { getTotalSeconds, getHours, getMinutes, displayTime } from './assets/Helpers';
 import { motion } from 'framer-motion';
-// import Selection from './assets/Selection';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 
@@ -63,12 +61,11 @@ const SlideTimeForm = ({ totalTime, setTotalTime, poses }) => {
   const [timeSet, setTimeSet] = useState(false);
   const [hours, setHours] = useState(getHours(totalTime));
   const [minutes, setMinutes] = useState(getMinutes(totalTime));
-  const [seconds, setSeconds] = useState(getSeconds(totalTime));  
   const classes = useStyles();
 
   useEffect(() => {
-    setTotalTime(getTotalSeconds(hours, minutes, seconds));
-  }, [setTotalTime, totalTime, hours, minutes, seconds, poses])
+    setTotalTime(getTotalSeconds(hours, minutes, 0));
+  }, [setTotalTime, totalTime, hours, minutes, poses])
  
   useEffect(() => {
       (totalTime !== 0 ? setTimeSet(true) : setTimeSet(false));
@@ -81,9 +78,6 @@ const SlideTimeForm = ({ totalTime, setTotalTime, poses }) => {
     }
     if(name === 'minutes') {
       setMinutes(newValue);
-    }
-    if(name === 'seconds') {
-      setSeconds(newValue);
     }
   };
 
@@ -117,18 +111,6 @@ const SlideTimeForm = ({ totalTime, setTotalTime, poses }) => {
               max={59}
               onChange={(e, value) => handleSliderChange('minutes', value)}
               />
-            <p className="legend" >Seconds:</p>
-            <PrettoSlider
-              value={seconds}
-              getAriaValueText={valuetext}
-              aria-labelledby="discrete-slider"
-              valueLabelDisplay="auto"
-              step={5}
-              marks
-              min={0}
-              max={55}
-              onChange={(e, value) => handleSliderChange('seconds', value)}
-            />
             </div>
             <div className="time-controls">
               <Link to={timeSet ? '/program' : '#'} >

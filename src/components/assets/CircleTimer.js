@@ -1,15 +1,20 @@
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
-import { displayTime } from './Helpers';
+import { displayTime, getRandomInt } from './Helpers';
+import { quotes } from './Content';
+
 
 const CircleTimer = ({ timerOn, completePose, currentPose }) => {
+
+  const text = quotes[ (getRandomInt(quotes.length)) ];
+
   return (
     <CountdownCircleTimer 
       isPlaying={timerOn}
       duration={currentPose.duration}
       colors={[
           ['#282b66', 0.33],
-          ['#cab665', 0.33],
-          ['#825142', 0.33]
+          ['#675a69', 0.33],
+          ['#9D1C4D', 0.33],
         ]}
       trailColor='#a3b4aa'
       size={350}
@@ -32,7 +37,7 @@ const CircleTimer = ({ timerOn, completePose, currentPose }) => {
         >
       { displayTime(remainingTime) }
       </p>
-      <p style={{ fontSize: '1.5rem' }}>You Can Do It!</p>
+      <p style={{ fontSize: '1.5rem' }}>{text}</p>
       </div>
       )}
   </CountdownCircleTimer>

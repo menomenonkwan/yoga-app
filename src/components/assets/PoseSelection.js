@@ -5,8 +5,8 @@ const customStyles = {
 
   container: styles => ({
     ...styles,
-    width: '350px',
-    margin: '3rem 0 1.5rem 0',
+    width: '100%',
+    margin: '1rem 0 3rem 0',
     outline: 'transparent',
   }),
   control: styles => ({ 

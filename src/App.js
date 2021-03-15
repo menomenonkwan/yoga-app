@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -7,9 +7,12 @@ import Program from './components/Program';
 import Footer from './components/Footer';
 import NotFound from './components/NotFound';
 import { Move } from './components/assets/Helpers';
-// import { poseList as Sample, sampleTime } from './components/assets/Content';
 import { AnimatePresence, motion } from 'framer-motion';
 import Build from './components/Build';
+import Login from './components/Login';
+import Account from './components/assets/Account';
+import firebase from './firebase';
+import MobileMenu from './components/assets/MobileMenu.js';
 
 const variants = {
   hidden: { opacity: 0,},
@@ -21,7 +24,18 @@ const variants = {
 function App() {
   const [totalTime, setTotalTime] = useState(0);
   const [poses, setPoses] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
   const location = useLocation();
+  const auth = firebase.auth();
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      console.log('user has signed out');
+      setCurrentUser(null);
+      setTotalTime(0);
+      setPoses([]);
+    });
+  }
 
   const deletePose = (index) => {
     const adjustedPoses = [ ...poses ];
@@ -43,7 +57,14 @@ function App() {
       initial="hidden"
       animate="visible"     
     >
-      <Header />
+      <Header 
+        currentUser={currentUser} 
+        signOut={signOut}
+      />
+      <MobileMenu 
+        currentUser={currentUser} 
+        signOut={signOut}
+      />
       <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.key}>
         <Route path="/program">
@@ -60,8 +81,25 @@ function App() {
             setTotalTime={setTotalTime}
             movePosition={movePosition} 
             deletePose={deletePose}
+            currentUser={currentUser}
           />
         </Route>
+        <Route path="/login">
+          <Login 
+            auth={auth}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+            signOut={signOut}
+            setPoses={setPoses}
+          />
+        </Route>
+        <Route path="/account">
+          <Account 
+            currentUser={currentUser}
+            signOut={signOut}
+            setPoses={setPoses}
+          />
+        </Route> 
         <Route exact path="/">
           <Home />
         </Route>

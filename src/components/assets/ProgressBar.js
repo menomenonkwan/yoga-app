@@ -29,7 +29,7 @@ const ProgressBar = ({ totalTime }) => {
           {displayTime(timeLeft / 1000)}
         </p>
         <p className="progress-right">
-          {percent}%
+          {percent ? percent : '0'}%
         </p>
       </div>
     </div>

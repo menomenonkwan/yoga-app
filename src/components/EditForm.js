@@ -105,6 +105,7 @@ const EditForm = ({ index, poses, setPoses, setEdit }) => {
         <fieldset>
           <legend>Edit Pose:</legend>
           <input 
+            className="edit-input"
             type="text" 
             name="name"
             placeholder="name" 

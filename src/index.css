@@ -4,13 +4,14 @@
   --light: #9ba17b;
   --dark: #2e4342;
   --bright: #819e81;
-  --white: #ccc;
+  --white: #ddd;
   --purple: #675a69;
   --lightpurple: #a7867d;
   --blue: #282b66;
   --lightblue: #a3b4aa;
   --yellow: #cab665;
   --orange: #825142;
+  --orange: rgb(105, 46, 28);
   --main-font: "Josefin Sans";
   --secondary-font: "Comfortaa";
 }

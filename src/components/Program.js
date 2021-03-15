@@ -137,6 +137,11 @@ const Program = ({ poses, totalTime }) => {
             className="on"
             whileHover={{scale:1.1}}
             whileTap={{scale:0.9}}
+            style={{
+              backgroundColor: 'transparent',
+              border: '2px solid var(--lightpurple)',
+              color: 'var(--lightpurple)'
+            }}
           >
             <FaHome />Edit
           </motion.button>

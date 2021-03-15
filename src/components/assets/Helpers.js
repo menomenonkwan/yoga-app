@@ -59,4 +59,8 @@ const getTotalTime = (arr) => {
   return time;
 }
 
-export { Move, getTotalSeconds, displayTime, getHours, getMinutes, getSeconds, getTotalTime };
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+export { Move, getTotalSeconds, displayTime, getHours, getMinutes, getSeconds, getTotalTime, getRandomInt };

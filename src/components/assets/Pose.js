@@ -1,5 +1,5 @@
 import { displayTime } from './Helpers';
-import { FaChevronCircleUp, FaChevronCircleDown, FaEdit, FaDizzy, FaArrowsAltV } from 'react-icons/fa';
+import { FaChevronCircleUp, FaChevronCircleDown, FaEdit, FaTimes, FaArrowsAltV } from 'react-icons/fa';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -42,7 +42,7 @@ const Pose = ({ pose, index, movePosition, editPose, deletePose }) => {
       
       <FaArrowsAltV className="pose-drag"/>
       <FaEdit className="pose-controls"  onClick={() => editPose(index)}/>
-      <FaDizzy className="pose-controls"  onClick={() => deletePose(index)}/>
+      <FaTimes className="pose-controls"  onClick={() => deletePose(index)}/>
     </motion.li>
    );
 }
