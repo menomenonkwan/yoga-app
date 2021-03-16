@@ -78,11 +78,11 @@ const Account = ({ currentUser, signOut, setPoses }) => {
               style={{ backgroundColor: 'var(--orange)', color: 'var(--white)'}}
             >delete
             </motion.button>
-            <ol className="saved-pose-list">
+            <ul className="saved-pose-list">
               {program.program.map(pose => (
                 <li key={pose.id} className="saved-pose">{pose.name} - {displayTime(pose.duration)}</li>
               ))}
-            </ol>
+            </ul>
           </div>
         ))}
       </div>

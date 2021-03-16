@@ -1,22 +1,45 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 .App {
   text-align: center;
   color: white;
   background: var(--light);
+  background: -o-radial-gradient(circle, var(--light) 0%, var(--dark) 100%);
   background: radial-gradient(circle, var(--light) 0%, var(--dark) 100%);
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
 header,
 footer {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2rem 2.5rem;
   font-size: 1.6rem;
 }
@@ -27,7 +50,9 @@ footer {
 }
 
 header h1 {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-align: start;
   font-family: var(--main-font), var(--secondary-font), sans-serif;
   color: var(--purple);
@@ -38,9 +63,15 @@ header h1 {
 /* NAVIGATION */
 /* ---------------------------------- */
 nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   list-style-type: none;
 }
 
@@ -50,6 +81,8 @@ nav a {
   padding: 1rem 2rem;
   color: var(--white);
   position: relative;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   outline: transparent;
 }
@@ -62,6 +95,8 @@ nav a::after {
   width: 0;
   height: 0;
   background: var(--bright);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -80,7 +115,8 @@ nav a:hover::after {
   text-shadow: 1px 1px 1px black;
   font-weight: 400;
   position: relative;
-  filter: brightness(0.9);
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
 }
 
 .selected::after {
@@ -97,22 +133,34 @@ nav a:hover::after {
 /* BODY */
 /* ---------------------------------- */
 .container {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 5rem;
 }
 
 .section,
 .inputs {
-  flex: 2;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
 .section-list,
 .current-list {
-  flex: 3;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
 }
 
 button {
@@ -126,7 +174,9 @@ button {
   background: var(--purple);
   font-size: 1.5rem;
   margin: 2rem;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 
 button svg {
@@ -137,7 +187,8 @@ button svg {
 
 .on:hover {
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .off {
@@ -147,7 +198,8 @@ button svg {
 }
 
 .off:hover {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   cursor: not-allowed;
 }
 
@@ -171,16 +223,26 @@ p {
 /* --------------------------------------- */
 
 fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 1px solid var(--dark);
   background: rgba(0, 0, 0, 0.1);
   border-radius: 2rem;
   padding: 0rem 1rem;
   margin: 0 1rem 2rem 1rem;
-  box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 legend {
@@ -225,7 +287,8 @@ legend span {
 }
 
 .edit-input:focus {
-  box-shadow: 1px 2px 3px var(--dark);
+  -webkit-box-shadow: 1px 2px 3px var(--dark);
+          box-shadow: 1px 2px 3px var(--dark);
   border: 2px solid var(--purple);
 }
 
@@ -252,10 +315,19 @@ legend span {
 .list {
   list-style-type: none;
   min-height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .pose {
@@ -266,22 +338,32 @@ legend span {
   padding: 1rem;
   border-radius: 2rem 2rem 0 0;
   color: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   outline: transparent;
-  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
   border: 1px solid var(--dark);
   margin-top: 1rem;
 }
 
 .pose:nth-of-type(even) {
   border-radius: 0 0 2rem 2rem;
-  filter: brightness(0.85);
+  -webkit-filter: brightness(0.85);
+          filter: brightness(0.85);
 }
 
 .pose-name {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-align: center;
   font-size: 1.5rem;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
@@ -296,21 +378,29 @@ legend span {
 .pose-controls,
 .pose-drag {
   color: var(--bright);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
   margin: 0.25rem 1rem;
 }
 
 .pose-controls:hover {
   cursor: pointer;
   color: var(--lightpurple);
-  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .pose-drag:hover {
   cursor: move;
   color: var(--lightpurple);
-  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .drag {
@@ -319,7 +409,8 @@ legend span {
 
 .global-drag-line {
   border-bottom: 0.5rem groove var(--white) !important;
-  box-shadow: 1px 1px 2px black;
+  -webkit-box-shadow: 1px 1px 2px black;
+          box-shadow: 1px 1px 2px black;
   border-radius: 5rem;
 }
 
@@ -349,10 +440,19 @@ legend span {
   border-radius: 1rem;
   color: var(--bright);
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .totals h3 {
@@ -368,9 +468,15 @@ legend span {
 }
 
 .totals-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 90%;
   padding: 1rem;
 }
@@ -384,14 +490,24 @@ legend span {
 /* --------------------------------------- */
 .program {
   background: var(--blue);
+  background: -o-radial-gradient(circle, var(--bright) 0%, var(--dark) 100%);
   background: radial-gradient(circle, var(--bright) 0%, var(--dark) 100%);
   z-index: 1;
   width: 100%;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   top: 0;
 }
@@ -439,6 +555,8 @@ PROGRESS BAR
 
 #program-progress {
   height: 4rem;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
   transition: all 1s ease;
 }
 
@@ -468,8 +586,11 @@ SAVED LIST
   padding: 1rem;
   margin-bottom: 3rem;
   width: 100%;
+  display: -ms-grid;
   display: grid;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
 }
 .saved-list {
@@ -481,14 +602,16 @@ SAVED LIST
 }
 .saved-pose-list {
   margin-top: 0.5rem;
-  box-shadow: 1px 2px 5px black;
+  -webkit-box-shadow: 1px 2px 5px black;
+          box-shadow: 1px 2px 5px black;
 } 
 .saved-pose {
   background: var(--purple);
   padding: 0.5rem;
 }
 .saved-pose:nth-child(even) {
-  filter: brightness(0.9);
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
 }
 
 .mobile { display: none;}
@@ -531,7 +654,10 @@ MEDIA QUERIES
   }
   
   .totals-display {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -552,9 +678,14 @@ MEDIA QUERIES
 
 @media (max-width: 700px) {
   .container {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 1rem;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .account h1 {
@@ -591,8 +722,11 @@ MEDIA QUERIES
     padding: 1rem;
     margin-bottom: 3rem;
     width: 100%;
+    display: -ms-grid;
     display: grid;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
   }
   .saved-list {
@@ -603,8 +737,10 @@ MEDIA QUERIES
     margin: 1rem;
   }
   .saved-pose-list {
-    margin-top: 0.5rem;
-    box-shadow: 1px 2px 5px black;
+    list-style-type: none;
+    margin-top: 0.75rem;
+    -webkit-box-shadow: 1px 2px 5px black;
+            box-shadow: 1px 2px 5px black;
   } 
   .saved-pose {
     background: var(--purple);
