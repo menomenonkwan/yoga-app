@@ -34,7 +34,7 @@ export default function SignIn({ setNewUser, setCurrentUser, auth }) {
     
     
     auth.signInWithEmailAndPassword(email, password).then(cred => {
-      console.log('user signing in', cred);
+      console.log('user signing in');
       setCurrentUser(cred);
     }).catch((error) => {
       console.log(error);

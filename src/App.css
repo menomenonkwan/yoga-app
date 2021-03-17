@@ -17,14 +17,14 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
@@ -35,11 +35,11 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem 2.5rem;
   font-size: 1.6rem;
 }
@@ -51,8 +51,8 @@ footer {
 
 header h1 {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   text-align: start;
   font-family: var(--main-font), var(--secondary-font), sans-serif;
   color: var(--purple);
@@ -67,11 +67,11 @@ nav ul {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   list-style-type: none;
 }
 
@@ -116,7 +116,7 @@ nav a:hover::after {
   font-weight: 400;
   position: relative;
   -webkit-filter: brightness(0.9);
-          filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 
 .selected::after {
@@ -134,33 +134,33 @@ nav a:hover::after {
 /* ---------------------------------- */
 .container {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   padding: 5rem;
 }
 
 .section,
 .inputs {
   -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  -ms-flex: 2;
+  flex: 2;
 }
 
 .section-list,
 .current-list {
   -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  -ms-flex: 3;
+  flex: 3;
 }
 
 button {
@@ -175,8 +175,8 @@ button {
   font-size: 1.5rem;
   margin: 2rem;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
 
 button svg {
@@ -188,7 +188,7 @@ button svg {
 .on:hover {
   cursor: pointer;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .off {
@@ -199,7 +199,7 @@ button svg {
 
 .off:hover {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   cursor: not-allowed;
 }
 
@@ -228,21 +228,21 @@ fieldset {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: 1px solid var(--dark);
   background: rgba(0, 0, 0, 0.1);
   border-radius: 2rem;
   padding: 0rem 1rem;
   margin: 0 1rem 2rem 1rem;
   -webkit-box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 legend {
@@ -288,7 +288,7 @@ legend span {
 
 .edit-input:focus {
   -webkit-box-shadow: 1px 2px 3px var(--dark);
-          box-shadow: 1px 2px 3px var(--dark);
+  box-shadow: 1px 2px 3px var(--dark);
   border: 2px solid var(--purple);
 }
 
@@ -320,14 +320,14 @@ legend span {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .pose {
@@ -342,14 +342,14 @@ legend span {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   outline: transparent;
   -webkit-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
-          box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
   border: 1px solid var(--dark);
   margin-top: 1rem;
 }
@@ -357,13 +357,13 @@ legend span {
 .pose:nth-of-type(even) {
   border-radius: 0 0 2rem 2rem;
   -webkit-filter: brightness(0.85);
-          filter: brightness(0.85);
+  filter: brightness(0.85);
 }
 
 .pose-name {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   text-align: center;
   font-size: 1.5rem;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
@@ -382,8 +382,8 @@ legend span {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
   margin: 0.25rem 1rem;
 }
 
@@ -391,16 +391,16 @@ legend span {
   cursor: pointer;
   color: var(--lightpurple);
   -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .pose-drag:hover {
   cursor: move;
   color: var(--lightpurple);
   -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .drag {
@@ -410,7 +410,7 @@ legend span {
 .global-drag-line {
   border-bottom: 0.5rem groove var(--white) !important;
   -webkit-box-shadow: 1px 1px 2px black;
-          box-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 2px black;
   border-radius: 5rem;
 }
 
@@ -444,15 +444,15 @@ legend span {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .totals h3 {
@@ -472,11 +472,11 @@ legend span {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 90%;
   padding: 1rem;
 }
@@ -500,14 +500,14 @@ legend span {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
   top: 0;
 }
@@ -577,21 +577,24 @@ PROGRESS BAR
   right: 2rem;
 }
 
-
 /* --------------------------------
 SAVED LIST
 -------------------------------- */
 .saved-programs-grid {
-  background: rgb(0,0,0,0.1);
+  background: rgb(0, 0, 0, 0.1);
   padding: 1rem;
   margin-bottom: 3rem;
   width: 100%;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
+}
+.saved-length {
+  color: var(--dark);
+  padding: 0.5rem;
 }
 .saved-list {
   padding: 1rem;
@@ -601,21 +604,36 @@ SAVED LIST
   margin: 1rem;
 }
 .saved-pose-list {
+  list-style: none;
   margin-top: 0.5rem;
   -webkit-box-shadow: 1px 2px 5px black;
-          box-shadow: 1px 2px 5px black;
-} 
+  box-shadow: 1px 2px 5px black;
+  border-radius: 3rem 0;
+}
 .saved-pose {
+  color: var(--white);
   background: var(--purple);
-  padding: 0.5rem;
+  padding: 0.75rem;
+  text-align: left;
+  padding-left: 25%;
+}
+.saved-pose span {
+  color: var(--bright);
 }
 .saved-pose:nth-child(even) {
   -webkit-filter: brightness(0.9);
-          filter: brightness(0.9);
+  filter: brightness(0.9);
+}
+.saved-pose:first-of-type {
+  border-top-left-radius: 3rem;
+}
+.saved-pose:last-of-type {
+  border-bottom-right-radius: 3rem;
 }
 
-.mobile { display: none;}
-
+.mobile {
+  display: none;
+}
 
 /* --------------------------------
 MEDIA QUERIES
@@ -625,7 +643,7 @@ MEDIA QUERIES
   .next {
     bottom: 10rem;
   }
-  
+
   .to-home {
     top: 4rem;
     right: 1rem;
@@ -644,7 +662,7 @@ MEDIA QUERIES
   .totals {
     width: 90%;
   }
-  
+
   .totals h3 {
     font-size: 1.5rem;
     padding: 0.25rem;
@@ -652,19 +670,21 @@ MEDIA QUERIES
   .totals span {
     font-size: 2rem;
   }
-  
+
   .totals-display {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
 
 @media (max-width: 750px) {
-  nav { display: none; }
-  .mobile { 
-    display: block; 
+  nav {
+    display: none;
+  }
+  .mobile {
+    display: block;
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -680,12 +700,12 @@ MEDIA QUERIES
   .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     padding: 1rem;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   .account h1 {
@@ -714,36 +734,15 @@ MEDIA QUERIES
     margin: auto;
   }
 
-  .next h2 { font-size: 1.5rem; }
-  .next p { font-size: 2rem; }
-
-  .saved-programs-grid {
-    background: rgb(0,0,0,0.1);
-    padding: 1rem;
-    margin-bottom: 3rem;
-    width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
-  }
-  .saved-list {
-    padding: 1rem;
+  .next h2 {
     font-size: 1.5rem;
-    color: var(--white);
-    background: rgba(0, 0, 0, 0.15);
-    margin: 1rem;
   }
-  .saved-pose-list {
-    list-style-type: none;
-    margin-top: 0.75rem;
-    -webkit-box-shadow: 1px 2px 5px black;
-            box-shadow: 1px 2px 5px black;
-  } 
+  .next p {
+    font-size: 2rem;
+  }
+
   .saved-pose {
-    background: var(--purple);
+    text-align: center;
     padding: 1rem 0;
   }
 
@@ -760,6 +759,4 @@ MEDIA QUERIES
   .inputs {
     width: 90%;
   }
-
-
 }

@@ -48,6 +48,10 @@ const Account = ({ currentUser, signOut, setPoses }) => {
     });
   }
 
+  const getFullTime = (program) => {
+    const time = program.program.reduce((tot, cur) => tot = tot + cur.duration ,0);
+    return time;
+  }
 
   return ( 
     <div className="container account"
@@ -66,7 +70,7 @@ const Account = ({ currentUser, signOut, setPoses }) => {
               value={index}
               onClick={handleClick}
               whileTap={{ scale: 0.9 }}
-              whileHover={{ scale: 1.1, cursor: 'pointer' }}
+              whileHover={{ scale: 1.1, cursor: 'pointer', boxShadow: '0px 2px 5px black' }}
             >select
             </motion.button>
             </Link>
@@ -74,13 +78,14 @@ const Account = ({ currentUser, signOut, setPoses }) => {
               value={index}
               onClick={handleDelete}
               whileTap={{ scale: 0.9 }}
-              whileHover={{ scale: 1.1, cursor: 'pointer' }}
+              whileHover={{ scale: 1.1, cursor: 'pointer', boxShadow: '0px 2px 5px black' }}
               style={{ backgroundColor: 'var(--orange)', color: 'var(--white)'}}
             >delete
             </motion.button>
+            <h4 className="saved-length">Total Time: {displayTime(getFullTime(program))}</h4>
             <ul className="saved-pose-list">
               {program.program.map(pose => (
-                <li key={pose.id} className="saved-pose">{pose.name} - {displayTime(pose.duration)}</li>
+                <li key={pose.id} className="saved-pose">{pose.name} - <span>{displayTime(pose.duration)}</span></li>
               ))}
             </ul>
           </div>
